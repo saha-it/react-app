@@ -10,13 +10,14 @@ import Top from "./component/Top";
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
 );
+const APP_NAME: String = "react-app";
 
 root.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<App />} />
-                <Route path="/top" element={<Top />} />
+                <Route path={APP_NAME + "/"} element={<App />} />
+                <Route path={APP_NAME + "/top"} element={<Top />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>
