@@ -1,8 +1,23 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import axios from "axios";
 
 function App() {
+    const { useState, useEffect } = React;
+    const [message, getMessage] = useState("783-0060の都道府県は？");
+    useEffect(() => {
+        axios
+            .get("https://zipcloud.ibsnet.co.jp/api/search?zipcode=7830060")
+            .then((results) => {
+                console.log(results.data);
+                getMessage(results.data.results[0].address1);
+            })
+            .catch((error) => {
+                console.log("失敗");
+                console.log(error.status);
+            });
+    });
     return (
         <div className="App">
             <header className="App-header">
@@ -18,9 +33,7 @@ function App() {
                 >
                     Learn React
                 </a>
-                <h1 className="text-3xl font-bold underline">
-                    Hello Tailwind CSS!
-                </h1>
+                <p>{message}</p>
             </header>
         </div>
     );
