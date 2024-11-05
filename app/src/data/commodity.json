@@ -1,0 +1,92 @@
+{
+    "commodity": [
+        {
+            "name": "サントリー ほろよい グレープ",
+            "alcohol": "low",
+            "flavor": "test",
+            "type": "horoyoi",
+            "itemCode": "kuranosuke:10009114",
+            "shopCode": "kuranosuke"
+        },
+        {
+            "name": "サントリー ほろよい グレフルソルティ",
+            "alcohol": "low",
+            "flavor": "test",
+            "type": "horoyoi",
+            "itemCode": "kuranosuke:10008953",
+            "shopCode": "kuranosuke"
+        },
+        {
+            "name": "サントリー ほろよい 白いサワー",
+            "alcohol": "low",
+            "flavor": "test",
+            "type": "horoyoi",
+            "itemCode": "kuranosuke:10009113",
+            "shopCode": "kuranosuke"
+        },
+        {
+            "name": "サントリー ほろよい はちみつレモン",
+            "alcohol": "low",
+            "flavor": "test",
+            "type": "horoyoi",
+            "itemCode": "kuranosuke:10009116",
+            "shopCode": "kuranosuke"
+        },
+        {
+            "name": "サントリー ほろよい もも",
+            "alcohol": "low",
+            "flavor": "test",
+            "type": "horoyoi",
+            "itemCode": "kuranosuke:10009111",
+            "shopCode": "kuranosuke"
+        },
+        {
+            "name": "サントリー ほろよい レモみかん",
+            "alcohol": "low",
+            "flavor": "test",
+            "type": "horoyoi",
+            "itemCode": "kuranosuke:10014183",
+            "shopCode": "kuranosuke"
+        },
+        {
+            "name": "サントリー ほろよい 梅酒ソーダ",
+            "alcohol": "low",
+            "flavor": "test",
+            "type": "horoyoi",
+            "itemCode": "kuranosuke:10009112",
+            "shopCode": "kuranosuke"
+        },
+        {
+            "name": "サントリー ほろよい 白ぶどう",
+            "alcohol": "low",
+            "flavor": "test",
+            "type": "horoyoi",
+            "itemCode": "kuranosuke:10008969",
+            "shopCode": "kuranosuke"
+        },
+        {
+            "name": "タカラ 焼酎ハイボール ラムネ割り",
+            "alcohol": "middle",
+            "flavor": "test",
+            "type": "highball",
+            "itemCode": "kuranosuke:10008221",
+            "shopCode": "kuranosuke"
+        },
+        {
+            "name": "キリン 氷結 ウメ",
+            "alcohol": "middle",
+            "flavor": "test",
+            "type": "chuhai",
+            "itemCode": "kuranosuke:10013657",
+            "shopCode": "kuranosuke"
+        },
+        {
+            "name": "キリン 麒麟特製 レモンサワー",
+            "alcohol": "high",
+            "flavor": "test",
+            "type": "sour",
+            "itemCode": "kuranosuke:10008786",
+            "shopCode": "kuranosuke"
+        }
+    ]
+}
