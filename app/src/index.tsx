@@ -5,8 +5,12 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+import Header from "./component/Header";
 import Top from "./component/Top";
-import Search from "./component/Search";
+import SearchResult from "./component/SearchResult";
+
+import SelectTest from "./component/SelectTest";
+import "./App.css";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
@@ -15,13 +19,17 @@ const APP_NAME: String = "react-app";
 
 root.render(
     <div>
-        <BrowserRouter>
+        {/* <BrowserRouter>
             <Routes>
                 <Route path={APP_NAME + "/"} element={<App />} />
                 <Route path={APP_NAME + "/top"} element={<Top />} />
             </Routes>
-        </BrowserRouter>
+        </BrowserRouter> */}
         {/* <Search /> */}
+        <Header />
+        <Top />
+        <SelectTest />
+        <SearchResult />
     </div>
 );
 
