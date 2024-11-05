@@ -21,7 +21,7 @@ root.render(
                 <Route path={APP_NAME + "/top"} element={<Top />} />
             </Routes>
         </BrowserRouter>
-        <Search />
+        {/* <Search /> */}
     </div>
 );
 
