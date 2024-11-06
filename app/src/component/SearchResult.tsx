@@ -2,10 +2,21 @@ import React, { useState, useEffect } from "react";
 import commodity from "../data/commodity.json";
 import axios from "axios";
 
-import SelectAlcohol from "./SelectAlcohol";
+/* import SelectAlcohol from "./SelectAlcohol"; */
 import SelectType from "./SelectType";
-interface Object {
+/* import SelectTest from "./SelectTest"; */
+
+import SelectAlcohol from "./SelectAlcohol";
+
+interface Item {
     itemName: string;
+    itemCode: string;
+}
+
+interface Object {
+    Item: Object;
+    itemName: string;
+    itemCode: string;
 }
 
 //API叩いて対象商品を全件取得
@@ -33,13 +44,11 @@ const url =
             console.log(error.status);
         });
 }
-
-let flg = true;
-let page = 1; */
+*/
 
 let counter = 1;
-const timer = setInterval(function () {
-    axios
+const timer = setInterval(async function () {
+    await axios
         .get(
             "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?format=json&genreId=408186&shopCode=kuranosuke&maxPrice=500&page=" +
                 counter +
@@ -55,8 +64,8 @@ const timer = setInterval(function () {
             console.log("失敗");
             console.log(error.status);
         });
-    if (counter === 10) {
-        clearInterval(timer); // 無効化するときはsetintervalのタイマーをclearIntervalに渡してあげるだけです。
+    if (counter === 1) {
+        clearInterval(timer);
     }
     counter++;
     console.log(counter);
@@ -65,7 +74,7 @@ const timer = setInterval(function () {
 const TestParent: React.FC = () => {
     const [alcohol, setAlcohol] = useState("");
     const [type, setType] = useState("");
-    const [datas, setDatas] = useState([{ itemName: "" }]);
+    const [datas, setDatas] = useState(Array<Object>);
     const changeAlcohol = (newValue: string) => {
         setAlcohol(newValue);
     };
@@ -79,37 +88,73 @@ const TestParent: React.FC = () => {
         const list = commodity.commodity.filter(
             (value) => value.alcohol == alcohol && value.type == type
         );
-        for (const value of list) {
-            await axios
+        for await (const value of list) {
+            /* await axios
                 .get(
                     "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?format=json&itemCode=" +
                         value.itemCode +
                         "&applicationId=1075902594404183588"
                 )
                 .then((res) => {
-                    /*
-                        TODO 画面表示用にデータを整形
-                        商品名、アルコール度数、値段、会社名、種類
-                    */
+                    
                     let data = res.data.Items[0].Item;
                     arr.push(data);
                 })
                 .catch((error) => {
                     console.log("失敗");
                     console.log(error.status);
-                });
+                }); */
+            let drinkList: any = allDatas.filter(
+                (drink) => value.itemCode == drink.Item.itemCode
+            );
+            //console.dir(drinkList[0]);
+            /*
+                TODO 画面表示用にデータを整形
+                商品名、アルコール度数、値段、会社名、種類
+            */
+            if (drinkList[0] !== undefined) {
+                arr.push(drinkList[0]);
+            }
         }
+        /*  async function add() {
+            setDatas(arr);
+            console.log(datas);
+        }
+        add(); */
         setDatas(arr);
+        /*
+            TODO
+            undifinedの削除処理と原因究明
+        */
+        console.log(arr);
+        console.log(list);
+        //setDatas(arr);
+        //setDatas(arr);
+        //console.log(datas);
     }
 
     return (
-        <div className="mt-8 bg-[#fff]">
-            <p>あなたの好みを教えてください</p>
-            <SelectAlcohol onValueChange={changeAlcohol} />
+        <div className="mt-8">
+            <p className="text-[#fff] w-fit m-auto">
+                お客様の好みを教えてください
+            </p>
+            {/* <SelectTest onValueChange={changeAlcohol} /> */}
+            {/* <SelectAlcohol onValueChange={changeAlcohol} /> */}
             <SelectType changeType={changeType} />
-            <button onClick={() => handleClick()}>Click me</button>
+            <SelectAlcohol onChangeAlcohol={changeAlcohol} />
+            <div className="bg-[#fff] w-fit m-auto">
+                <button onClick={() => handleClick()} className="bg-[#fff]">
+                    Click me
+                </button>
+            </div>
+
             {datas.map((value, key) => {
-                return <p key={key}> {value.itemName}</p>;
+                return (
+                    <p key={key} className="bg-[#fff]">
+                        {value.Item.itemName}
+                        {key}
+                    </p>
+                );
             })}
         </div>
     );

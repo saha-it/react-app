@@ -28,7 +28,6 @@ root.render(
         {/* <Search /> */}
         <Header />
         <Top />
-        <SelectTest />
         <SearchResult />
     </div>
 );

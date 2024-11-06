@@ -1,66 +1,65 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
+import RadioButton from "./RadioButton";
+
+import {
+    faFaceGrinWide,
+    faFaceSmileBeam,
+    faFaceGrinStars,
+} from "@fortawesome/free-solid-svg-icons";
+
+interface ChildProps {
+    // 親コンポートから渡されたコールバック関数
+    onChangeAlcohol: (value: string) => void;
+}
 
 /** ラジオボタン設定 */
 interface Radio {
+    name: string;
+    icon: any;
     label: string;
     value: string;
 }
 
-interface ChildProps {
-    // 親コンポートから渡されたコールバック関数
-    onValueChange: (value: string) => void;
-}
-
-const TestChild: React.FC<ChildProps> = ({ onValueChange }) => {
+const RadioButtonTest: React.FC<ChildProps> = ({ onChangeAlcohol }) => {
     /** 選択中のラジオボタンvalue */
     const [alcohol, setAlcohol] = useState("");
-    /** ラジオボタン切り替えイベント */
-    const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const changeAlcohol = (event: React.ChangeEvent<HTMLInputElement>) => {
         const a = event.target.value;
         setAlcohol(event.target.value);
-        onValueChange(a);
+        onChangeAlcohol(a);
     };
     /** ラジオボタン */
-    const alcoholList: Radio[] = [
+    const arr: Radio[] = [
         {
+            name: "LOW",
+            icon: faFaceGrinWide,
             label: "3~4",
             value: "low",
         },
         {
+            name: "MIDDLE",
+            icon: faFaceSmileBeam,
             label: "5~7",
             value: "middle",
         },
         {
+            name: "HIGH",
+            icon: faFaceGrinStars,
             label: "8~",
             value: "high",
         },
     ];
     return (
         <div>
-            <div className="container form-check m-auto">
-                <div className="row">
-                    {alcoholList.map((radio, key) => {
-                        return (
-                            <div className="col-4" key={key}>
-                                <input
-                                    className="form-check-input"
-                                    type="radio"
-                                    name="alcohol-content"
-                                    value={radio.value}
-                                    checked={radio.value === alcohol}
-                                    onChange={changeValue}
-                                />
-                                <label className="form-check-label">
-                                    <span className="fs-6">{radio.label}</span>
-                                </label>
-                            </div>
-                        );
-                    })}
-                </div>
-                <div>{alcohol}が選択されました！</div>
-            </div>
+            <RadioButton
+                object={arr}
+                method={changeAlcohol}
+                state={alcohol}
+                radioType={"alcohol"}
+                title={"アルコール度数"}
+            />
         </div>
     );
 };
 
-export default TestChild;
+export default RadioButtonTest;
