@@ -1,0 +1,103 @@
+{
+    "commodity": [
+        {
+            "name": "サントリー ほろよい グレープ",
+            "alcoholContent": "low",
+            "flavor": "test",
+            "type": "horoyoi",
+            "itemCode": "kuranosuke:10009114",
+            "shopCode": "kuranosuke",
+            "company": "サントリー"
+        },
+        {
+            "name": "サントリー ほろよい グレフルソルティ",
+            "alcoholContent": "low",
+            "flavor": "test",
+            "type": "horoyoi",
+            "itemCode": "kuranosuke:10008953",
+            "shopCode": "kuranosuke",
+            "company": "サントリー"
+        },
+        {
+            "name": "サントリー ほろよい 白いサワー",
+            "alcoholContent": "low",
+            "flavor": "test",
+            "type": "horoyoi",
+            "itemCode": "kuranosuke:10009113",
+            "shopCode": "kuranosuke",
+            "company": "サントリー"
+        },
+        {
+            "name": "サントリー ほろよい はちみつレモン",
+            "alcoholContent": "low",
+            "flavor": "test",
+            "type": "horoyoi",
+            "itemCode": "kuranosuke:10009116",
+            "shopCode": "kuranosuke",
+            "company": "サントリー"
+        },
+        {
+            "name": "サントリー ほろよい もも",
+            "alcoholContent": "low",
+            "flavor": "test",
+            "type": "horoyoi",
+            "itemCode": "kuranosuke:10009111",
+            "shopCode": "kuranosuke",
+            "company": "サントリー"
+        },
+        {
+            "name": "サントリー ほろよい レモみかん",
+            "alcoholContent": "low",
+            "flavor": "test",
+            "type": "horoyoi",
+            "itemCode": "kuranosuke:10014183",
+            "shopCode": "kuranosuke",
+            "company": "サントリー"
+        },
+        {
+            "name": "サントリー ほろよい 梅酒ソーダ",
+            "alcoholContent": "low",
+            "flavor": "test",
+            "type": "horoyoi",
+            "itemCode": "kuranosuke:10009112",
+            "shopCode": "kuranosuke",
+            "company": "サントリー"
+        },
+        {
+            "name": "サントリー ほろよい 白ぶどう",
+            "alcoholContent": "low",
+            "flavor": "test",
+            "type": "horoyoi",
+            "itemCode": "kuranosuke:10008969",
+            "shopCode": "kuranosuke",
+            "company": "サントリー"
+        },
+        {
+            "name": "タカラ 焼酎ハイボール ラムネ割り",
+            "alcoholContent": "middle",
+            "flavor": "test",
+            "type": "highball",
+            "itemCode": "kuranosuke:10008221",
+            "shopCode": "kuranosuke",
+            "company": "サントリー"
+        },
+        {
+            "name": "キリン 氷結 ウメ",
+            "alcoholContent": "middle",
+            "flavor": "test",
+            "type": "chuhai",
+            "itemCode": "kuranosuke:10013657",
+            "shopCode": "kuranosuke",
+            "company": "キリン"
+        },
+        {
+            "name": "キリン 麒麟特製 レモンサワー",
+            "alcoholContent": "high",
+            "flavor": "test",
+            "type": "sour",
+            "itemCode": "kuranosuke:10008786",
+            "shopCode": "kuranosuke",
+            "company": "キリン"
+        }
+    ]
+}

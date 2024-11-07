@@ -5,7 +5,12 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+import Header from "./component/Header";
 import Top from "./component/Top";
+import SearchResult from "./component/SearchResult";
+
+import SelectTest from "./component/SelectTest";
+import "./App.css";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
@@ -13,14 +18,18 @@ const root = ReactDOM.createRoot(
 const APP_NAME: String = "react-app";
 
 root.render(
-    <React.StrictMode>
-        <BrowserRouter>
+    <div>
+        {/* <BrowserRouter>
             <Routes>
                 <Route path={APP_NAME + "/"} element={<App />} />
                 <Route path={APP_NAME + "/top"} element={<Top />} />
             </Routes>
-        </BrowserRouter>
-    </React.StrictMode>
+        </BrowserRouter> */}
+        {/* <Search /> */}
+        <Header />
+        <Top />
+        <SearchResult />
+    </div>
 );
 
 // If you want to start measuring performance in your app, pass a function

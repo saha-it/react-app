@@ -3,6 +3,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
 
+//TODO 不要ファイルなので削除
+
 function App() {
     const { useState, useEffect } = React;
     const [message, getMessage] = useState("783-0060の都道府県は？");
