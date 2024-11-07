@@ -12,7 +12,7 @@ function Top() {
                         src={barCounter}
                     ></img>
                     <img
-                        className="absolute top-0 left-0 bottom-0 right-0 m-auto"
+                        className="h-[40vh] absolute top-0 left-0 bottom-0 right-0 m-auto"
                         src={cat}
                     ></img>
                 </div>
