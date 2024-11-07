@@ -9,7 +9,7 @@ import {
 
 interface ChildProps {
     // 親コンポートから渡されたコールバック関数
-    onChangeAlcohol: (value: string) => void;
+    changeAlcoholContent: (value: string) => void;
 }
 
 /** ラジオボタン設定 */
@@ -20,16 +20,24 @@ interface Radio {
     value: string;
 }
 
-const RadioButtonTest: React.FC<ChildProps> = ({ onChangeAlcohol }) => {
+const SelectAlcoholContent: React.FC<ChildProps> = ({
+    changeAlcoholContent,
+}) => {
     /** 選択中のラジオボタンvalue */
-    const [alcohol, setAlcohol] = useState("");
-    const changeAlcohol = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const [alcoholContent, setAlcoholContent] = useState("");
+    const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
         const a = event.target.value;
-        setAlcohol(event.target.value);
-        onChangeAlcohol(a);
+        setAlcoholContent(event.target.value);
+        changeAlcoholContent(a);
     };
     /** ラジオボタン */
-    const arr: Radio[] = [
+    const alcoholContentList: Radio[] = [
+        {
+            name: "指定しない",
+            icon: faFaceGrinWide,
+            label: "指定しない",
+            value: "",
+        },
         {
             name: "LOW",
             icon: faFaceGrinWide,
@@ -52,9 +60,9 @@ const RadioButtonTest: React.FC<ChildProps> = ({ onChangeAlcohol }) => {
     return (
         <div>
             <RadioButton
-                object={arr}
-                method={changeAlcohol}
-                state={alcohol}
+                object={alcoholContentList}
+                method={changeValue}
+                state={alcoholContent}
                 radioType={"alcohol"}
                 title={"アルコール度数"}
             />
@@ -62,4 +70,4 @@ const RadioButtonTest: React.FC<ChildProps> = ({ onChangeAlcohol }) => {
     );
 };
 
-export default RadioButtonTest;
+export default SelectAlcoholContent;

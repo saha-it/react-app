@@ -11,8 +11,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const RadioButton = (props: any) => {
     return (
         <div>
-            <div className="justify-center items-center h-[30vh]">
-                <p className="text-[#fff] w-fit m-auto">{props.title}</p>
+            <div className="justify-center items-center h-fit">
+                <p className="text-[#fff] w-fit m-auto font-serif font-semibold">
+                    {props.title}
+                </p>
                 <div className="flex justify-center flex-wrap">
                     {props.object.map((property: any, key: number) => {
                         return (
@@ -21,7 +23,7 @@ const RadioButton = (props: any) => {
                                 key={key}
                             >
                                 <input
-                                    id={property.name}
+                                    id={property.value}
                                     className="opacity-0 absolute top-0 left-0 h-full w-full m-0 cursor-pointer peer"
                                     type="radio"
                                     name={props.radioType}

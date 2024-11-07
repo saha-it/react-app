@@ -32,6 +32,12 @@ const SelectType: React.FC<ChildProps> = ({ changeType }) => {
     /** ラジオボタン */
     const alcoholList: Radio[] = [
         {
+            name: "指定しない",
+            icon: faFaceGrinWide,
+            label: "指定しない",
+            value: "",
+        },
+        {
             name: "ビール",
             icon: faFaceGrinWide,
             label: "ビール",
@@ -72,6 +78,24 @@ const SelectType: React.FC<ChildProps> = ({ changeType }) => {
             icon: faFaceGrinWide,
             label: "ワイン",
             value: "wine",
+        },
+        {
+            name: "カクテル",
+            icon: faFaceGrinWide,
+            label: "カクテル",
+            value: "cocktail",
+        },
+        {
+            name: "焼酎",
+            icon: faFaceGrinWide,
+            label: "焼酎",
+            value: "shochu",
+        },
+        {
+            name: "お茶割り",
+            icon: faFaceGrinWide,
+            label: "お茶割り",
+            value: "otyawari",
         },
     ];
     return (
