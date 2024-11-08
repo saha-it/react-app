@@ -43,6 +43,12 @@ const SelectFlavor: React.FC<ChildProps> = ({ onChangeFlavor }) => {
             value: "rich",
         },
         {
+            name: "爽快",
+            icon: faFaceGrinStars,
+            label: "爽快",
+            value: "refreshing",
+        },
+        {
             name: "苦味",
             icon: faFaceGrinWide,
             label: "苦味",
@@ -53,12 +59,6 @@ const SelectFlavor: React.FC<ChildProps> = ({ onChangeFlavor }) => {
             icon: faFaceSmileBeam,
             label: "酸味",
             value: "sour",
-        },
-        {
-            name: "爽快",
-            icon: faFaceGrinStars,
-            label: "爽快",
-            value: "refreshing",
         },
         {
             name: "甘口",

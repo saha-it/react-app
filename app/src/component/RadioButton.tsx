@@ -33,10 +33,19 @@ const RadioButton = (props: any) => {
                                 />
                                 <div className="flex flex-col items-center justify-center h-full w-full border-2 border-[#079ad9] rounded-md p-[1rem] peer-checked:bg-[#fff]">
                                     <div className="">
-                                        <FontAwesomeIcon
-                                            className="h-[3em] text-[#079ad9]"
-                                            icon={property.icon}
-                                        />
+                                        {property.iconType == "fontAwsome" && (
+                                            <FontAwesomeIcon
+                                                className="h-[3em] text-[#079ad9]"
+                                                icon={property.icon}
+                                            />
+                                        )}
+                                        {property.iconType == "png" && (
+                                            <img
+                                                className="h-[3em] text-[#079ad9]"
+                                                src={property.icon}
+                                            />
+                                        )}
+                                        {property.iconType == "" && <div></div>}
                                     </div>
                                     <label className="text-center text-[0.75rem] font-semibold uppercase tracking-[1px] text-[#079ad9]">
                                         {property.name}
@@ -46,9 +55,6 @@ const RadioButton = (props: any) => {
                         );
                     })}
                 </div>
-            </div>
-            <div className="text-[#fff] m-auto w-fit">
-                {props.state}が選択されました！
             </div>
         </div>
     );
