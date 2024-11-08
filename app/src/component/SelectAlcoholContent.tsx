@@ -35,8 +35,8 @@ const SelectAlcoholContent: React.FC<ChildProps> = ({
     const alcoholContentList: Radio[] = [
         {
             name: "指定しない",
-            iconType: "fontAwsome",
-            icon: faFaceGrinWide,
+            iconType: "",
+            icon: "",
             label: "指定しない",
             value: "",
         },
