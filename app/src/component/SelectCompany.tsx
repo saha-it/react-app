@@ -40,32 +40,32 @@ const SelectCompany: React.FC<ChildProps> = ({ changeCompany }) => {
         {
             name: "サントリー",
             icon: faFaceGrinWide,
-            label: "サントリー",
-            value: "SUNTORY",
+            label: "SUNTORY",
+            value: "サントリー",
         },
         {
             name: "キリン",
             icon: faFaceGrinWide,
-            label: "キリン",
-            value: "KIRIN",
+            label: "KIRIN",
+            value: "キリン",
         },
         {
             name: "アサヒ",
             icon: faFaceGrinWide,
-            label: "アサヒ",
-            value: "ASAHI",
+            label: "ASAHI",
+            value: "アサヒ",
         },
         {
             name: "サッポロ",
             icon: faFaceGrinWide,
-            label: "サッポロ",
-            value: "SAPPORO",
+            label: "SAPPORO",
+            value: "サッポロ",
         },
         {
             name: "宝酒造",
             icon: faFaceGrinWide,
-            label: "宝酒造",
-            value: "TAKARA",
+            label: "TAKARA",
+            value: "宝酒造",
         },
     ];
     return (
