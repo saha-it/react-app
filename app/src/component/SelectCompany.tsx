@@ -32,12 +32,6 @@ const SelectCompany: React.FC<ChildProps> = ({ changeCompany }) => {
     /** ラジオボタン */
     const companyList: Radio[] = [
         {
-            name: "指定しない",
-            icon: faFaceGrinWide,
-            label: "指定しない",
-            value: "",
-        },
-        {
             name: "サントリー",
             icon: faFaceGrinWide,
             label: "SUNTORY",
@@ -66,6 +60,66 @@ const SelectCompany: React.FC<ChildProps> = ({ changeCompany }) => {
             icon: faFaceGrinWide,
             label: "TAKARA",
             value: "宝酒造",
+        },
+        {
+            name: "合同酒精",
+            icon: faFaceGrinWide,
+            label: "GOUDOU",
+            value: "合同酒精",
+        },
+        {
+            name: "コカコーラ",
+            icon: faFaceGrinWide,
+            label: "COCACOLA",
+            value: "コカコーラ",
+        },
+        {
+            name: "クライナー",
+            icon: faFaceGrinWide,
+            label: "KLEINER",
+            value: "クライナー",
+        },
+        {
+            name: "日本ビール",
+            icon: faFaceGrinWide,
+            label: "NIPPON",
+            value: "日本ビール",
+        },
+        {
+            name: "木内酒造",
+            icon: faFaceGrinWide,
+            label: "KIUTI",
+            value: "木内酒造",
+        },
+        {
+            name: "チョーヤ",
+            icon: faFaceGrinWide,
+            label: "CHOYA",
+            value: "チョーヤ",
+        },
+        {
+            name: "サンガリア",
+            icon: faFaceGrinWide,
+            label: "SANGARIA",
+            value: "サンガリア",
+        },
+        {
+            name: "エチゴビール",
+            icon: faFaceGrinWide,
+            label: "ECHIGO",
+            value: "エチゴビール",
+        },
+        {
+            name: "DHC",
+            icon: faFaceGrinWide,
+            label: "DHC",
+            value: "DHC",
+        },
+        {
+            name: "指定しない",
+            icon: faFaceGrinWide,
+            label: "指定しない",
+            value: "",
         },
     ];
     return (
