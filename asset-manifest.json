@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.css": "/react-app/static/css/main.5261c0ea.css",
-    "main.js": "/react-app/static/js/main.de044575.js",
+    "main.css": "/react-app/static/css/main.2fd9d0d3.css",
+    "main.js": "/react-app/static/js/main.fe17e45b.js",
     "static/js/453.a6a97343.chunk.js": "/react-app/static/js/453.a6a97343.chunk.js",
     "static/media/bar-counter.jpeg": "/react-app/static/media/bar-counter.2bfb30a6d8449a33d671.jpeg",
     "static/media/cat.png": "/react-app/static/media/cat.c7a26bdc70b554fecca6.png",
+    "static/media/sour.png": "/react-app/static/media/sour.dcc82b4c8e216e9afdde.png",
+    "static/media/cocktail.png": "/react-app/static/media/cocktail.32471ccc6dcb163f08bb.png",
+    "static/media/wine.png": "/react-app/static/media/wine.50e4840a2ee49ae23636.png",
     "index.html": "/react-app/index.html",
-    "main.5261c0ea.css.map": "/react-app/static/css/main.5261c0ea.css.map",
-    "main.de044575.js.map": "/react-app/static/js/main.de044575.js.map",
+    "main.2fd9d0d3.css.map": "/react-app/static/css/main.2fd9d0d3.css.map",
+    "main.fe17e45b.js.map": "/react-app/static/js/main.fe17e45b.js.map",
     "453.a6a97343.chunk.js.map": "/react-app/static/js/453.a6a97343.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5261c0ea.css",
-    "static/js/main.de044575.js"
+    "static/css/main.2fd9d0d3.css",
+    "static/js/main.fe17e45b.js"
   ]
 }
