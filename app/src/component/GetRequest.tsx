@@ -23,7 +23,7 @@ interface essentialData {
 let allDatas: Array<Object> = [];
 
 const url =
-    "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?format=json&genreId=510915&shopCode=kuranosuke&maxPrice=500&";
+    "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?format=json&genreId=510915&shopCode=kuranosuke&maxPrice=500&sort=%2BupdateTimestamp";
 
 const affiliateId = "41388598.82f92f73.41388599.896fa6e2";
 const applicationId = "1075902594404183588";
@@ -65,7 +65,7 @@ const timer = setInterval(async function () {
     console.log(allDatas.length);
     counter++;
     console.log(counter);
-}, 500);
+}, 600);
 
 const GetRequest = (props: any) => {
     const [essentialDatas, setEssentialData] = useState(Array<essentialData>);
@@ -114,9 +114,16 @@ const GetRequest = (props: any) => {
         interface testData {
             company: string;
             name: string;
-            alcoholContent: string;
             type: string;
-            flavor: string;
+            richFlg: number;
+            refreshingFlg: number;
+            bitterFlg: number;
+            sourFlg: number;
+            sweetFlg: number;
+            dryFlg: number;
+            fruityFlg: number;
+            fruitType: string;
+            alcoholContent: number;
             itemCode: string;
             itemName: string;
         }
@@ -124,9 +131,16 @@ const GetRequest = (props: any) => {
             let obj: testData = {
                 company: company,
                 name: "",
-                alcoholContent: "",
                 type: type,
-                flavor: "",
+                richFlg: 0,
+                refreshingFlg: 0,
+                bitterFlg: 0,
+                sourFlg: 0,
+                sweetFlg: 0,
+                dryFlg: 0,
+                fruityFlg: 0,
+                fruitType: "",
+                alcoholContent: 0,
                 itemCode: v.Item.itemCode,
                 itemName: v.Item.itemName,
             };
@@ -146,7 +160,7 @@ const GetRequest = (props: any) => {
             <div className="flex m-auto w-[90vw] flex-wrap">
                 {essentialDatas.map((value, key) => {
                     return (
-                        <div>
+                        <div key={key}>
                             <AlcoholCard
                                 key={key}
                                 imageUrl={
