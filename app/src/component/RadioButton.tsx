@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const RadioButton = (props: any) => {
     return (
         <div>
-            <div className="justify-center items-center h-fit">
+            <div className="justify-center items-center h-fit mb-16">
                 <p className="text-[#fff] w-fit m-auto font-serif font-semibold">
                     {props.title}
                 </p>
@@ -47,7 +47,7 @@ const RadioButton = (props: any) => {
                                         )}
                                         {property.iconType == "" && <div></div>}
                                     </div>
-                                    <label className="text-center text-[0.75rem] font-semibold uppercase tracking-[1px] text-[#079ad9]">
+                                    <label className="text-center text-[0.75rem] font-semibold uppercase tracking-[1px] text-[#079ad9] text-balance">
                                         {property.name}
                                     </label>
                                 </div>
