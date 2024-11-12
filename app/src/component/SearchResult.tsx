@@ -1,23 +1,38 @@
 import React, { useState, useEffect } from "react";
-import commodity from "../data/commodity.json";
 import axios from "axios";
-
-import AlcoholCard from "./AlcoholCard";
 
 import SelectType from "./SelectType";
 import SelectAlcoholContent from "./SelectAlcoholContent";
 import SelectCompany from "./SelectCompany";
 import SelectFlavor from "./SelectFlavor";
+import SelectFruit from "./SelectFruit";
+
+import AlcoholCard from "./AlcoholCard";
+
+import GetRequest from "./GetRequest";
+
+import commodity from "../data/commodity.json";
+import Untitled from "../data/Untitled.json";
+
+import imgCatHead from "../images/cat_head.png";
 
 interface Item {
     itemName: string;
     itemCode: string;
+    mediumImageUrls: Array<mediumImageUrls>;
+    affiliateUrl: string;
+}
+
+interface mediumImageUrls {
+    imageUrl: string;
 }
 
 interface Object {
     Item: Object;
     itemName: string;
     itemCode: string;
+    mediumImageUrls: Array<mediumImageUrls>;
+    affiliateUrl: string;
 }
 
 interface Items {
@@ -26,12 +41,20 @@ interface Items {
     itemCode: string;
 }
 
+interface Condition {
+    alcoholContetnt: string;
+    type: string;
+    company: string;
+    flavor: string;
+    fruitType: string;
+}
+
 //API叩いて対象商品を全件取得
 let allDatas: Array<Object> = [];
 //"https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?format=json&genreId=408186&shopCode=kuranosuke&maxPrice=500&page=2&applicationId=1075902594404183588"
 
 const url =
-    "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?format=json&genreId=408186&applicationId=1075902594404183588";
+    "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?format=json&genreId=408186&shopCode=kuranosuke&maxPrice=500&";
 
 const affiliateId = "41388598.82f92f73.41388599.896fa6e2";
 const applicationId = "1075902594404183588";
@@ -40,9 +63,13 @@ let counter = 1;
 const timer = setInterval(async function () {
     await axios
         .get(
-            "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?format=json&genreId=408186&shopCode=kuranosuke&maxPrice=500&page=" +
+            url +
+                "&page=" +
                 counter +
-                "&applicationId=1075902594404183588"
+                "&affiliateId=" +
+                affiliateId +
+                "&applicationId=" +
+                applicationId
         )
         .then((res) => {
             const items = res.data.Items;
@@ -62,8 +89,12 @@ const timer = setInterval(async function () {
 }, 500);
 
 const TestParent: React.FC = () => {
-    const [alcohol, setAlcohol] = useState("");
+    const [alcoholContent, setAlcohol] = useState("");
     const [type, setType] = useState("");
+    const [company, setCompany] = useState("");
+    const [flavor, setFlavor] = useState("");
+    const [fruit, setFruit] = useState("");
+    const [condition, setCondition] = useState(Object);
     const [datas, setDatas] = useState(Array<Object>);
     const changeAlcoholContent = (newValue: string) => {
         setAlcohol(newValue);
@@ -72,58 +103,104 @@ const TestParent: React.FC = () => {
         setType(newValue);
     };
     const changeCompany = (newValue: string) => {
-        setType(newValue);
+        setCompany(newValue);
     };
     const changeFlavor = (newValue: string) => {
-        setType(newValue);
+        setFlavor(newValue);
+    };
+    const changeFruit = (newValue: string) => {
+        setFruit(newValue);
     };
 
     async function handleClick() {
         //最初に配列を空にする
         let arr: Array<Object> = [];
-        const list = commodity.commodity.filter(
-            (v) =>
-                //未選択のものは全て取得する処理
-                (alcohol !== ""
-                    ? v.alcoholContent == alcohol
-                    : v.alcoholContent !== undefined) &&
-                (type !== "" ? v.type == type : v.type !== undefined)
-        );
-
-        /* let list = commodity.commodity.filter(function (value) {
-            console.log(alcohol);
-            if (alcohol !== "") {
-                return value.alcohol == alcohol;
+        const list = Untitled.filter((v) => {
+            //アルコール度数のレベルを3段階に分ける
+            let alcoholLevel = "";
+            if (v.alcoholContent < 4) {
+                alcoholLevel = "low";
+            } else if (v.alcoholContent >= 4 && v.alcoholContent < 8) {
+                alcoholLevel = "middle";
+            } else if (v.alcoholContent >= 8) {
+                alcoholLevel = "high";
             }
-            return value;
+            //条件が指定されており、かつ一致しなければ中断
+            if (alcoholContent !== "" && alcoholLevel != alcoholContent) {
+                return;
+            }
+            if (type !== "" && v.type != type) {
+                return;
+            }
+            if (company !== "" && v.company != company) {
+                return;
+            }
+            if (fruit !== "" && v.fruitType != fruit) {
+                return;
+            }
+            //flavorはフラグが0の時falseとなる
+            if (flavor !== "") {
+                switch (flavor) {
+                    case "rich":
+                        if (v.richFlg == 0) {
+                            return;
+                        }
+                        break;
+                    case "refreshing":
+                        if (v.refreshingFlg == 0) {
+                            return;
+                        }
+                        break;
+                    case "bitter":
+                        if (v.bitterFlg == 0) {
+                            return;
+                        }
+                        break;
+                    case "sour":
+                        if (v.sourFlg == 0) {
+                            return;
+                        }
+                        break;
+                    case "sweet":
+                        if (v.sweetFlg == 0) {
+                            return;
+                        }
+                        break;
+                    case "dry":
+                        if (v.dryFlg == 0) {
+                            return;
+                        }
+                        break;
+                    case "fruity":
+                        if (v.fruityFlg == 0) {
+                            return;
+                        }
+                        break;
+                }
+            }
+            //未選択のものは全て取得する処理
+            /* (alcoholContent !== ""
+                ? alcoholLevel == alcoholContent
+                : v.alcoholContent !== undefined) &&
+            (type !== "" ? v.type == type : v.type !== undefined)
+            &&
+            (company != ""
+                    ? v.company == company
+                    : v.company != undefined) &&
+                (flavor != "" ? v.flavor == flavor : v.flavor != undefined) */
+            //console.log(v);
+            //指定の条件に一致したデータのみ返す
+            return v;
         });
-        list = list.filter(function (value) {
-            if (type !== "") {
-                return value.type == type;
-            }
-            return value;
-        }); */
 
         for await (const value of list) {
-            /* await axios
-                .get(
-                    "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?format=json&itemCode=" +
-                        value.itemCode +
-                        "&applicationId=1075902594404183588"
-                )
-                .then((res) => {
-                    
-                    let data = res.data.Items[0].Item;
-                    arr.push(data);
-                })
-                .catch((error) => {
-                    console.log("失敗");
-                    console.log(error.status);
-                }); */
-            let drinkList: any = allDatas.filter(
-                (drink) => value.itemCode == drink.Item.itemCode
-            );
-            //console.dir(drinkList[0]);
+            let drinkList: any = allDatas.filter((drink, index) => {
+                if (value.itemCode == drink.Item.itemCode) {
+                    console.log(index);
+                }
+
+                return value.itemCode == drink.Item.itemCode;
+            });
             /*
                 TODO 画面表示用にデータを整形
                 商品名、アルコール度数、値段、会社名、種類
@@ -133,35 +210,70 @@ const TestParent: React.FC = () => {
             }
         }
         setDatas(arr);
-        /*
-            TODO
-            undifinedの削除処理と原因究明
-        */
+
+        //検索条件の保存
+        setCondition({
+            ...condition,
+            alcoholContent: alcoholContent,
+            type: type,
+            company: company,
+            flavor: flavor,
+            fruitType: fruit,
+        });
     }
 
     return (
         <div className="mt-8">
-            <AlcoholCard />
-            <p className="text-[#fff] w-fit m-auto font-serif font-semibold">
-                お客様の好みを教えてください
-            </p>
+            <div className="flex w-fit m-auto">
+                <img
+                    className="w-6 h-6 text-[#fff] color-[#fff]"
+                    src={imgCatHead}
+                />
+                <p className="text-[#fff] w-fit font-serif font-semibold mb-16">
+                    お客様の好みをお伺いします
+                </p>
+                <img
+                    className="w-6 h-6 text-[#fff] color-[#fff]"
+                    src={imgCatHead}
+                />
+            </div>
             <SelectType changeType={changeType} />
             <SelectAlcoholContent changeAlcoholContent={changeAlcoholContent} />
             <SelectCompany changeCompany={changeCompany} />
             <SelectFlavor onChangeFlavor={changeFlavor} />
-            <div className="bg-[#fff] w-fit m-auto">
-                <button onClick={() => handleClick()} className="bg-[#fff]">
-                    Click me
+            <SelectFruit changeFruit={changeFruit} />
+            <div className="bg-[#fff] w-fit m-auto mb-16">
+                <button
+                    onClick={() => handleClick()}
+                    className="font-serif font-semibold bg-[#fff] p-2 border-4 border-indigo-200 border-b-indigo-500 border-r-indigo-500"
+                >
+                    商品を探す
                 </button>
             </div>
 
-            {datas.map((value, key) => {
-                return (
-                    <p key={key} className="bg-[#fff]">
-                        {value.Item.itemName}
-                    </p>
-                );
-            })}
+            <div className="text-[#fff] font-serif font-semibold w-fit m-auto">
+                <p>お酒の種類:{condition.type}</p>
+                <p>アルコールレベル:{condition.alcoholContent}</p>
+                <p>メーカー:{condition.company}</p>
+                <p>味わい:{condition.flavor}</p>
+                <p>フルーツ:{condition.fruit}</p>
+            </div>
+
+            {/*requestを取得するだけのコンポーネント */}
+            {/* <GetRequest company={company} type={type} /> */}
+
+            <div className="flex m-auto w-[90vw] flex-wrap">
+                {datas.map((value, key) => {
+                    return (
+                        <AlcoholCard
+                            key={key}
+                            imageUrl={value.Item.mediumImageUrls[0].imageUrl}
+                            itemName={value.Item.itemName}
+                            affiliateUrl={value.Item.affiliateUrl}
+                        />
+                    );
+                })}
+            </div>
         </div>
     );
 };

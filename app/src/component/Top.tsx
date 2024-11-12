@@ -4,7 +4,7 @@ import cat from "../images/cat.png";
 
 function Top() {
     return (
-        <div className="bg-[#000]">
+        <div id="top" className="bg-[#000]">
             <div>
                 <div className="relative	">
                     <img

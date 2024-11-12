@@ -5,11 +5,21 @@ import {
     faFaceGrinWide,
     faFaceSmileBeam,
     faFaceGrinStars,
+    faWhiskeyGlass,
 } from "@fortawesome/free-solid-svg-icons";
+
+import imgBeer from "../images/type/beer.png";
+import imgCan from "../images/type/can.png";
+import imgSour from "../images/type/sour.png";
+import imgWine from "../images/type/wine.png";
+import imgCocktail from "../images/type/cocktail.png";
+import imgSyochu from "../images/type/shochu.png";
+import imgOtya from "../images/type/otya.png";
 
 /** ラジオボタン設定 */
 interface Radio {
     name: string;
+    iconType: string;
     icon: any;
     label: string;
     value: string;
@@ -32,70 +42,95 @@ const SelectType: React.FC<ChildProps> = ({ changeType }) => {
     /** ラジオボタン */
     const alcoholList: Radio[] = [
         {
-            name: "指定しない",
-            icon: faFaceGrinWide,
-            label: "指定しない",
-            value: "",
-        },
-        {
             name: "ビール",
-            icon: faFaceGrinWide,
-            label: "ビール",
-            value: "beer",
+            iconType: "png",
+            icon: imgBeer,
+            label: "beer",
+            value: "ビール",
         },
         {
             name: "ハイボール",
-            icon: faFaceGrinWide,
-            label: "ハイボール",
-            value: "highball",
+            iconType: "fontAwsome",
+            icon: faWhiskeyGlass,
+            label: "highball",
+            value: "ハイボール",
         },
         {
             name: "サワー",
-            icon: faFaceGrinWide,
-            label: "サワー",
-            value: "sour",
+            iconType: "png",
+            icon: imgSour,
+            label: "sour",
+            value: "サワー",
         },
         {
-            name: "チューハイ",
-            icon: faFaceGrinWide,
-            label: "チューハイ",
-            value: "chuhai",
+            name: "氷結",
+            iconType: "png",
+            icon: imgCan,
+            label: "hyoketu",
+            value: "氷結",
         },
         {
             name: "ほろよい",
-            icon: faFaceGrinWide,
-            label: "ほろよい",
-            value: "horoyoi",
+            iconType: "png",
+            icon: imgCan,
+            label: "horoyoi",
+            value: "ほろよい",
         },
         {
-            name: "ストロングゼロ",
-            icon: faFaceGrinWide,
-            label: "ストロングゼロ",
-            value: "strongzero",
+            name: "ストロング",
+            iconType: "png",
+            icon: imgCan,
+            label: "strongzero",
+            value: "ストロング",
+        },
+        {
+            name: "196",
+            iconType: "png",
+            icon: imgCan,
+            label: "196",
+            value: "196",
         },
         {
             name: "ワイン",
-            icon: faFaceGrinWide,
-            label: "ワイン",
-            value: "wine",
+            iconType: "png",
+            icon: imgWine,
+            label: "wine",
+            value: "ワイン",
         },
         {
             name: "カクテル",
-            icon: faFaceGrinWide,
-            label: "カクテル",
-            value: "cocktail",
+            iconType: "png",
+            icon: imgCocktail,
+            label: "cocktail",
+            value: "カクテル",
         },
         {
             name: "焼酎",
-            icon: faFaceGrinWide,
-            label: "焼酎",
-            value: "shochu",
+            iconType: "png",
+            icon: imgSyochu,
+            label: "shochu",
+            value: "焼酎",
         },
         {
             name: "お茶割り",
+            iconType: "png",
+            icon: imgOtya,
+            label: "otyawari",
+            value: "お茶割り",
+        },
+        {
+            name: "梅酒",
+            iconType: "png",
+            icon: imgOtya,
+            label: "umesyu",
+            value: "梅酒",
+        },
+        {
+            name: "指定しない",
+            iconType: "",
             icon: faFaceGrinWide,
-            label: "お茶割り",
-            value: "otyawari",
+            label: "指定しない",
+            value: "",
         },
     ];
     return (

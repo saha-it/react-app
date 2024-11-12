@@ -31,16 +31,16 @@ const SelectFlavor: React.FC<ChildProps> = ({ onChangeFlavor }) => {
     /** ラジオボタン */
     const flavorList: Radio[] = [
         {
-            name: "指定しない",
-            icon: faFaceGrinWide,
-            label: "指定しない",
-            value: "",
-        },
-        {
             name: "濃厚",
             icon: faFaceGrinWide,
             label: "濃厚",
             value: "rich",
+        },
+        {
+            name: "爽快",
+            icon: faFaceGrinStars,
+            label: "爽快",
+            value: "refreshing",
         },
         {
             name: "苦味",
@@ -55,12 +55,6 @@ const SelectFlavor: React.FC<ChildProps> = ({ onChangeFlavor }) => {
             value: "sour",
         },
         {
-            name: "爽快",
-            icon: faFaceGrinStars,
-            label: "爽快",
-            value: "refreshing",
-        },
-        {
             name: "甘口",
             icon: faFaceGrinStars,
             label: "甘口",
@@ -71,6 +65,18 @@ const SelectFlavor: React.FC<ChildProps> = ({ onChangeFlavor }) => {
             icon: faFaceGrinStars,
             label: "辛口",
             value: "dry",
+        },
+        {
+            name: "フルーティー",
+            icon: faFaceGrinStars,
+            label: "フルーティー",
+            value: "fruity",
+        },
+        {
+            name: "指定しない",
+            icon: faFaceGrinWide,
+            label: "指定しない",
+            value: "",
         },
     ];
     return (

@@ -15,6 +15,7 @@ interface ChildProps {
 /** ラジオボタン設定 */
 interface Radio {
     name: string;
+    iconType: string;
     icon: any;
     label: string;
     value: string;
@@ -33,28 +34,32 @@ const SelectAlcoholContent: React.FC<ChildProps> = ({
     /** ラジオボタン */
     const alcoholContentList: Radio[] = [
         {
-            name: "指定しない",
-            icon: faFaceGrinWide,
-            label: "指定しない",
-            value: "",
-        },
-        {
             name: "LOW",
+            iconType: "fontAwsome",
             icon: faFaceGrinWide,
             label: "3~4",
             value: "low",
         },
         {
             name: "MIDDLE",
+            iconType: "fontAwsome",
             icon: faFaceSmileBeam,
             label: "5~7",
             value: "middle",
         },
         {
             name: "HIGH",
+            iconType: "fontAwsome",
             icon: faFaceGrinStars,
             label: "8~",
             value: "high",
+        },
+        {
+            name: "指定しない",
+            iconType: "",
+            icon: "",
+            label: "指定しない",
+            value: "",
         },
     ];
     return (
