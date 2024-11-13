@@ -8,13 +8,13 @@ import {
     faWhiskeyGlass,
 } from "@fortawesome/free-solid-svg-icons";
 
-import imgBeer from "../images/type/beer.png";
-import imgCan from "../images/type/can.png";
-import imgSour from "../images/type/sour.png";
-import imgWine from "../images/type/wine.png";
-import imgCocktail from "../images/type/cocktail.png";
-import imgSyochu from "../images/type/shochu.png";
-import imgOtya from "../images/type/otya.png";
+import imgBeer from "../images/type/beer.svg";
+import imgCan from "../images/type/can.svg";
+import imgSour from "../images/type/sour.svg";
+import imgWine from "../images/type/wine.svg";
+import imgCocktail from "../images/type/cocktail.svg";
+import imgSyochu from "../images/type/shochu.svg";
+import imgOtya from "../images/type/otya.svg";
 
 /** ラジオボタン設定 */
 interface Radio {
@@ -43,7 +43,7 @@ const SelectType: React.FC<ChildProps> = ({ changeType }) => {
     const alcoholList: Radio[] = [
         {
             name: "ビール",
-            iconType: "png",
+            iconType: "img",
             icon: imgBeer,
             label: "beer",
             value: "ビール",
@@ -57,70 +57,70 @@ const SelectType: React.FC<ChildProps> = ({ changeType }) => {
         },
         {
             name: "サワー",
-            iconType: "png",
+            iconType: "img",
             icon: imgSour,
             label: "sour",
             value: "サワー",
         },
         {
             name: "氷結",
-            iconType: "png",
+            iconType: "img",
             icon: imgCan,
             label: "hyoketu",
             value: "氷結",
         },
         {
             name: "ほろよい",
-            iconType: "png",
+            iconType: "img",
             icon: imgCan,
             label: "horoyoi",
             value: "ほろよい",
         },
         {
             name: "ストロング",
-            iconType: "png",
+            iconType: "img",
             icon: imgCan,
             label: "strongzero",
             value: "ストロング",
         },
         {
             name: "196",
-            iconType: "png",
+            iconType: "img",
             icon: imgCan,
             label: "196",
             value: "196",
         },
         {
             name: "ワイン",
-            iconType: "png",
+            iconType: "img",
             icon: imgWine,
             label: "wine",
             value: "ワイン",
         },
         {
             name: "カクテル",
-            iconType: "png",
+            iconType: "img",
             icon: imgCocktail,
             label: "cocktail",
             value: "カクテル",
         },
         {
             name: "焼酎",
-            iconType: "png",
+            iconType: "img",
             icon: imgSyochu,
             label: "shochu",
             value: "焼酎",
         },
         {
             name: "お茶割り",
-            iconType: "png",
+            iconType: "img",
             icon: imgOtya,
             label: "otyawari",
             value: "お茶割り",
         },
         {
             name: "梅酒",
-            iconType: "png",
+            iconType: "img",
             icon: imgOtya,
             label: "umesyu",
             value: "梅酒",
@@ -140,7 +140,7 @@ const SelectType: React.FC<ChildProps> = ({ changeType }) => {
                 method={changeValue}
                 state={type}
                 radioType={"type"}
-                title={"お酒の種類"}
+                title={"お酒の種類・シリーズ"}
             />
             {/* <div className="container form-check m-auto bg-[#fff]">
                 <div className="row">
