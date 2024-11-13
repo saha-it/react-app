@@ -223,14 +223,14 @@ const TestParent: React.FC = () => {
     }
 
     return (
-        <div className="mt-8">
+        <div id="search" className="mt-8">
             <div className="flex w-fit m-auto">
                 <img
                     className="w-6 h-6 text-[#fff] color-[#fff]"
                     src={imgCatHead}
                 />
                 <p className="text-[#fff] w-fit font-serif font-semibold mb-16">
-                    お客様の好みをお伺いします
+                    お客様の好みをお聞かせください
                 </p>
                 <img
                     className="w-6 h-6 text-[#fff] color-[#fff]"
@@ -239,13 +239,13 @@ const TestParent: React.FC = () => {
             </div>
             <SelectType changeType={changeType} />
             <SelectAlcoholContent changeAlcoholContent={changeAlcoholContent} />
-            <SelectCompany changeCompany={changeCompany} />
             <SelectFlavor onChangeFlavor={changeFlavor} />
             <SelectFruit changeFruit={changeFruit} />
-            <div className="bg-[#fff] w-fit m-auto mb-16">
+            <SelectCompany changeCompany={changeCompany} />
+            <div className="w-fit m-auto mb-16">
                 <button
                     onClick={() => handleClick()}
-                    className="font-serif font-semibold bg-[#fff] p-2 border-4 border-indigo-200 border-b-indigo-500 border-r-indigo-500"
+                    className="font-serif font-semibold text-[#fff] p-2 border-white rounded-lg border-l-2 border-t-2 border-b-[6px] border-r-[6px] hover:bg-sky-700"
                 >
                     商品を探す
                 </button>
