@@ -9,13 +9,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 } */
 
 const RadioButton = (props: any) => {
+    const color = "[#1da1f1]";
     return (
         <div>
             <div className="justify-center items-center h-fit mb-16">
                 <p className="text-[#fff] w-fit m-auto font-serif font-semibold">
                     {props.title}
                 </p>
-                <div className="flex justify-center flex-wrap">
+                <div className="flex justify-center flex-wrap w-[80vw] m-auto">
                     {props.object.map((property: any, key: number) => {
                         return (
                             <div
@@ -31,23 +32,23 @@ const RadioButton = (props: any) => {
                                     checked={property.value === props.state}
                                     onChange={props.method}
                                 />
-                                <div className="flex flex-col items-center justify-center h-full w-full border-2 border-[#079ad9] rounded-md p-[1rem] peer-checked:bg-[#fff]">
+                                <div className="flex flex-col items-center justify-center h-full w-full border-2 border-radioButton rounded-md p-[1rem] peer-checked:bg-sky-700 peer-hover:bg-sky-700">
                                     <div className="">
                                         {property.iconType == "fontAwsome" && (
                                             <FontAwesomeIcon
-                                                className="h-[3em] text-[#079ad9]"
+                                                className="h-[3em] text-[#fff]"
                                                 icon={property.icon}
                                             />
                                         )}
-                                        {property.iconType == "png" && (
+                                        {property.iconType == "img" && (
                                             <img
-                                                className="h-[3em] text-[#079ad9]"
+                                                className="h-[3em] text-[#fff]"
                                                 src={property.icon}
                                             />
                                         )}
                                         {property.iconType == "" && <div></div>}
                                     </div>
-                                    <label className="text-center text-[0.75rem] font-semibold uppercase tracking-[1px] text-[#079ad9] text-balance">
+                                    <label className="text-center text-[0.75rem] font-semibold uppercase tracking-[1px] text-balance text-[#fff] ">
                                         {property.name}
                                     </label>
                                 </div>
