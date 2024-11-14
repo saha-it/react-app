@@ -20,7 +20,7 @@ const RadioButton = (props: any) => {
                     {props.object.map((property: any, key: number) => {
                         return (
                             <div
-                                className="relative h-[7rem] w-[7rem] m-[0.5rem]"
+                                className="relative h-[7rem] w-[7rem] m-[0.5rem] max-sm:w-[4rem] max-sm:h-[4rem]"
                                 key={key}
                             >
                                 <input
@@ -36,19 +36,19 @@ const RadioButton = (props: any) => {
                                     <div className="">
                                         {property.iconType == "fontAwsome" && (
                                             <FontAwesomeIcon
-                                                className="h-[3em] text-[#fff]"
+                                                className="h-[3em] text-[#fff] max-sm:h-[1em]"
                                                 icon={property.icon}
                                             />
                                         )}
                                         {property.iconType == "img" && (
                                             <img
-                                                className="h-[3em] text-[#fff]"
+                                                className="h-[3em] text-[#fff] max-sm:h-[1em]"
                                                 src={property.icon}
                                             />
                                         )}
                                         {property.iconType == "" && <div></div>}
                                     </div>
-                                    <label className="text-center text-[0.75rem] font-semibold uppercase tracking-[1px] text-balance text-[#fff] ">
+                                    <label className="text-center text-[0.75rem] font-semibold uppercase tracking-[1px] text-balance text-[#fff] max-sm:text-[0.5rem]">
                                         {property.name}
                                     </label>
                                 </div>
