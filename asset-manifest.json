@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-app/static/css/main.876ed11f.css",
-    "main.js": "/react-app/static/js/main.c07b046b.js",
+    "main.js": "/react-app/static/js/main.d6902721.js",
     "static/js/453.a6a97343.chunk.js": "/react-app/static/js/453.a6a97343.chunk.js",
     "static/media/bar.png": "/react-app/static/media/bar.ad43cd4fead0348d2557.png",
     "static/media/cassis.svg": "/react-app/static/media/cassis.89cd161e31bfd832e6fc76c1543e17e7.svg",
@@ -11,6 +11,7 @@
     "static/media/yuzu.svg": "/react-app/static/media/yuzu.969d71b125dc4d5722b21b75602c6f6c.svg",
     "static/media/aloe.svg": "/react-app/static/media/aloe.7f331181b43b953c45db314a3cc14409.svg",
     "static/media/ume.svg": "/react-app/static/media/ume.991e0d5024996576471df54789607f02.svg",
+    "static/media/japanesepear.svg": "/react-app/static/media/japanesepear.6c2d1a8c94df3d9b8a6db716f5785884.svg",
     "static/media/grapefruit.svg": "/react-app/static/media/grapefruit.e0490c7cb6f9e208c964c15ce43b8d89.svg",
     "static/media/orange.svg": "/react-app/static/media/orange.bd3cfae5fb482517f5f3894480051b86.svg",
     "static/media/strawberry.svg": "/react-app/static/media/strawberry.656f380a756a83f5c63872e61275ecbf.svg",
@@ -31,11 +32,11 @@
     "index.html": "/react-app/index.html",
     "static/media/otya.svg": "/react-app/static/media/otya.9db45ebdb66e4235e23243f5a9e0870f.svg",
     "main.876ed11f.css.map": "/react-app/static/css/main.876ed11f.css.map",
-    "main.c07b046b.js.map": "/react-app/static/js/main.c07b046b.js.map",
+    "main.d6902721.js.map": "/react-app/static/js/main.d6902721.js.map",
     "453.a6a97343.chunk.js.map": "/react-app/static/js/453.a6a97343.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.876ed11f.css",
-    "static/js/main.c07b046b.js"
+    "static/js/main.d6902721.js"
   ]
 }
