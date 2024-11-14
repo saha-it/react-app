@@ -41,12 +41,14 @@ interface Items {
     itemCode: string;
 }
 
-interface Condition {
-    alcoholContetnt: string;
-    type: string;
-    company: string;
-    flavor: string;
-    fruitType: string;
+interface showData {
+    Item: {
+        company: string;
+        itemName: string;
+        alcoholContetnt: number;
+        mediumImageUrls: Array<mediumImageUrls>;
+        affiliateUrl: string;
+    };
 }
 
 //API叩いて対象商品を全件取得
@@ -95,7 +97,7 @@ const TestParent: React.FC = () => {
     const [flavor, setFlavor] = useState("");
     const [fruit, setFruit] = useState("");
     const [condition, setCondition] = useState(Object);
-    const [datas, setDatas] = useState(Array<Object>);
+    const [datas, setDatas] = useState(Array<showData>);
     const changeAlcoholContent = (newValue: string) => {
         setAlcohol(newValue);
     };
@@ -114,7 +116,7 @@ const TestParent: React.FC = () => {
 
     async function handleClick() {
         //最初に配列を空にする
-        let arr: Array<Object> = [];
+        let arr: Array<showData> = [];
         const list = Untitled.filter((v) => {
             //アルコール度数のレベルを3段階に分ける
             let alcoholLevel = "";
@@ -194,20 +196,33 @@ const TestParent: React.FC = () => {
         });
 
         for await (const value of list) {
-            let drinkList: any = allDatas.filter((drink, index) => {
+            //データがなければ処理の中断
+            if (value.name == "") {
+                continue;
+            }
+            let drink: any = allDatas.filter((drink, index) => {
                 if (value.itemCode == drink.Item.itemCode) {
                     console.log(index);
                 }
 
                 return value.itemCode == drink.Item.itemCode;
             });
-            /*
-                TODO 画面表示用にデータを整形
-                商品名、アルコール度数、値段、会社名、種類
-            */
-            if (drinkList[0] !== undefined) {
-                arr.push(drinkList[0]);
+            //データがなければ処理の中断
+            if (drink.length == 0) {
+                continue;
             }
+            console.log(value.company);
+            //表示用にデータを整形
+            const data: showData = {
+                Item: {
+                    company: value.company,
+                    itemName: value.name,
+                    alcoholContetnt: value.alcoholContent,
+                    mediumImageUrls: drink[0].Item.mediumImageUrls,
+                    affiliateUrl: drink[0].Item.affiliateUrl,
+                },
+            };
+            arr.push(data);
         }
         setDatas(arr);
 
@@ -267,8 +282,9 @@ const TestParent: React.FC = () => {
                     return (
                         <AlcoholCard
                             key={key}
-                            imageUrl={value.Item.mediumImageUrls[0].imageUrl}
+                            company={value.Item.company}
                             itemName={value.Item.itemName}
+                            imageUrl={value.Item.mediumImageUrls[0].imageUrl}
                             affiliateUrl={value.Item.affiliateUrl}
                         />
                     );
