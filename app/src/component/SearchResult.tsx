@@ -11,7 +11,6 @@ import AlcoholCard from "./AlcoholCard";
 
 import GetRequest from "./GetRequest";
 
-import commodity from "../data/commodity.json";
 import Untitled from "../data/Untitled.json";
 
 import imgCatHead from "../images/cat_head.png";
@@ -58,8 +57,8 @@ let allDatas: Array<Object> = [];
 const url =
     "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?format=json&genreId=408186&shopCode=kuranosuke&maxPrice=500&";
 
-const affiliateId = "41388598.82f92f73.41388599.896fa6e2";
-const applicationId = "1075902594404183588";
+const affiliateId = process.env.REACT_APP_AFFILIAT_ID;
+const applicationId = process.env.REACT_APP_API_KEY;
 
 let counter = 1;
 const timer = setInterval(async function () {
@@ -180,17 +179,6 @@ const TestParent: React.FC = () => {
                         break;
                 }
             }
-            //未選択のものは全て取得する処理
-            /* (alcoholContent !== ""
-                ? alcoholLevel == alcoholContent
-                : v.alcoholContent !== undefined) &&
-            (type !== "" ? v.type == type : v.type !== undefined)
-            &&
-            (company != ""
-                    ? v.company == company
-                    : v.company != undefined) &&
-                (flavor != "" ? v.flavor == flavor : v.flavor != undefined) */
-            //console.log(v);
             //指定の条件に一致したデータのみ返す
             return v;
         });
