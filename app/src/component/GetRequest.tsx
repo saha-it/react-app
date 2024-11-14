@@ -25,8 +25,8 @@ let allDatas: Array<Object> = [];
 const url =
     "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?format=json&genreId=510915&shopCode=kuranosuke&maxPrice=500&sort=%2BupdateTimestamp";
 
-const affiliateId = "41388598.82f92f73.41388599.896fa6e2";
-const applicationId = "1075902594404183588";
+const affiliateId = process.env.REACT_APP_AFFILIAT_ID;
+const applicationId = process.env.REACT_APP_API_KEY;
 
 let counter = 1;
 let itemCount = 0;

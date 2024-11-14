@@ -11,7 +11,6 @@ import AlcoholCard from "./AlcoholCard";
 
 import GetRequest from "./GetRequest";
 
-import commodity from "../data/commodity.json";
 import Untitled from "../data/Untitled.json";
 
 import imgCatHead from "../images/cat_head.png";
@@ -41,12 +40,14 @@ interface Items {
     itemCode: string;
 }
 
-interface Condition {
-    alcoholContetnt: string;
-    type: string;
-    company: string;
-    flavor: string;
-    fruitType: string;
+interface showData {
+    Item: {
+        company: string;
+        itemName: string;
+        alcoholContetnt: number;
+        mediumImageUrls: Array<mediumImageUrls>;
+        affiliateUrl: string;
+    };
 }
 
 //API叩いて対象商品を全件取得
@@ -56,8 +57,8 @@ let allDatas: Array<Object> = [];
 const url =
     "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?format=json&genreId=408186&shopCode=kuranosuke&maxPrice=500&";
 
-const affiliateId = "41388598.82f92f73.41388599.896fa6e2";
-const applicationId = "1075902594404183588";
+const affiliateId = process.env.REACT_APP_AFFILIAT_ID;
+const applicationId = process.env.REACT_APP_API_KEY;
 
 let counter = 1;
 const timer = setInterval(async function () {
@@ -95,7 +96,7 @@ const TestParent: React.FC = () => {
     const [flavor, setFlavor] = useState("");
     const [fruit, setFruit] = useState("");
     const [condition, setCondition] = useState(Object);
-    const [datas, setDatas] = useState(Array<Object>);
+    const [datas, setDatas] = useState(Array<showData>);
     const changeAlcoholContent = (newValue: string) => {
         setAlcohol(newValue);
     };
@@ -114,7 +115,7 @@ const TestParent: React.FC = () => {
 
     async function handleClick() {
         //最初に配列を空にする
-        let arr: Array<Object> = [];
+        let arr: Array<showData> = [];
         const list = Untitled.filter((v) => {
             //アルコール度数のレベルを3段階に分ける
             let alcoholLevel = "";
@@ -178,36 +179,38 @@ const TestParent: React.FC = () => {
                         break;
                 }
             }
-            //未選択のものは全て取得する処理
-            /* (alcoholContent !== ""
-                ? alcoholLevel == alcoholContent
-                : v.alcoholContent !== undefined) &&
-            (type !== "" ? v.type == type : v.type !== undefined)
-            &&
-            (company != ""
-                    ? v.company == company
-                    : v.company != undefined) &&
-                (flavor != "" ? v.flavor == flavor : v.flavor != undefined) */
-            //console.log(v);
             //指定の条件に一致したデータのみ返す
             return v;
         });
 
         for await (const value of list) {
-            let drinkList: any = allDatas.filter((drink, index) => {
+            //データがなければ処理の中断
+            if (value.name == "") {
+                continue;
+            }
+            let drink: any = allDatas.filter((drink, index) => {
                 if (value.itemCode == drink.Item.itemCode) {
                     console.log(index);
                 }
 
                 return value.itemCode == drink.Item.itemCode;
             });
-            /*
-                TODO 画面表示用にデータを整形
-                商品名、アルコール度数、値段、会社名、種類
-            */
-            if (drinkList[0] !== undefined) {
-                arr.push(drinkList[0]);
+            //データがなければ処理の中断
+            if (drink.length == 0) {
+                continue;
             }
+            console.log(value.company);
+            //表示用にデータを整形
+            const data: showData = {
+                Item: {
+                    company: value.company,
+                    itemName: value.name,
+                    alcoholContetnt: value.alcoholContent,
+                    mediumImageUrls: drink[0].Item.mediumImageUrls,
+                    affiliateUrl: drink[0].Item.affiliateUrl,
+                },
+            };
+            arr.push(data);
         }
         setDatas(arr);
 
@@ -262,13 +265,14 @@ const TestParent: React.FC = () => {
             {/*requestを取得するだけのコンポーネント */}
             {/* <GetRequest company={company} type={type} /> */}
 
-            <div className="flex m-auto w-[90vw] flex-wrap">
+            <div className="flex m-auto w-[90vw] flex-wrap max-sm:block max-md:w-[80vw] justify-around ">
                 {datas.map((value, key) => {
                     return (
                         <AlcoholCard
                             key={key}
-                            imageUrl={value.Item.mediumImageUrls[0].imageUrl}
+                            company={value.Item.company}
                             itemName={value.Item.itemName}
+                            imageUrl={value.Item.mediumImageUrls[0].imageUrl}
                             affiliateUrl={value.Item.affiliateUrl}
                         />
                     );
