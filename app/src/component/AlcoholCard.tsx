@@ -14,16 +14,17 @@ const AlcoholCard = (prop: any) => {
                 <p className="mb-4">{prop.company}</p>
                 <p>{prop.itemName}</p>
             </div>
-            <div className="w-fit m-auto bg-[#800000] p-2 rounded-xl mb-4">
-                <a
-                    href={prop.affiliateUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#fff] font-serif font-semibold"
-                >
-                    楽天市場で商品を見る
-                </a>
-            </div>
+            <a
+                href={prop.affiliateUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <div className="w-fit m-auto bg-[#800000] p-2 rounded-xl mb-4">
+                    <p className="text-[#fff] font-serif font-semibold">
+                        楽天市場で商品を見る
+                    </p>
+                </div>
+            </a>
         </div>
     );
 };
