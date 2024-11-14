@@ -49,6 +49,13 @@ const SelectType: React.FC<ChildProps> = ({ changeType }) => {
             value: "ビール",
         },
         {
+            name: "発泡酒",
+            iconType: "img",
+            icon: imgCan,
+            label: "beer3",
+            value: "発泡酒",
+        },
+        {
             name: "ハイボール",
             iconType: "fontAwsome",
             icon: faWhiskeyGlass,
