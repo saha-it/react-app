@@ -13,7 +13,7 @@ function Top() {
                     ></img>
                     <a href="#search">
                         <img
-                            className="h-[50vw] w-fit absolute top-0 left-0 bottom-0 right-0 m-auto hover:h-[55vw]"
+                            className="h-[50vw] absolute top-0 left-0 bottom-0 right-0 m-auto hover:h-[55vw]"
                             src={cat}
                         ></img>
                     </a>
