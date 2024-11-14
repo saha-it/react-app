@@ -13,6 +13,7 @@ import imgWatermelon from "../images/fruit/watermelon.svg";
 import imgYuzu from "../images/fruit/yuzu.svg";
 import imgUme from "../images/fruit/ume.svg";
 import imgApple from "../images/fruit/apple.svg";
+import imgJapanesepear from "../images/fruit/japanesepear.svg";
 import imgAloe from "../images/fruit/aloe.svg";
 import imgMandarin from "../images/fruit/mandarin.svg";
 import imgOrange from "../images/fruit/orange.svg";
@@ -126,6 +127,14 @@ const SelectFruit: React.FC<ChildProps> = ({ changeFruit }) => {
             icon: imgApple,
             label: "apple",
             value: "リンゴ",
+        },
+        {
+            name: "なし",
+            iconType: "img",
+            iconColor: "red",
+            icon: imgJapanesepear,
+            label: "japanesepear",
+            value: "なし",
         },
         {
             name: "アロエ",
