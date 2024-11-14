@@ -1,21 +1,8 @@
 import React from "react";
 
-/* interface Item {
-    itemPriceMax: number;
-    itemName: string;
-    mediumImageUrls: Array<mediumImageUrls>;
-    company: string;
-    itemCode: string;
-    affiliateUrl: string;
-}
-
-interface mediumImageUrls {
-    imageUrl: string;
-} */
-
 const AlcoholCard = (prop: any) => {
     return (
-        <div className="w-[30vw] border-4 border-red-500 bg-[#F2E5BF]">
+        <div className="w-[30vw] max-md:w-[40vw] max-sm:w-[80vw] border-4 border-red-500 bg-[#F2E5BF]">
             <div>
                 <img className="m-auto w-fit" src={prop.imageUrl}></img>
             </div>

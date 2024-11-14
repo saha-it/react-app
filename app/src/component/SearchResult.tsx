@@ -262,7 +262,7 @@ const TestParent: React.FC = () => {
             {/*requestを取得するだけのコンポーネント */}
             {/* <GetRequest company={company} type={type} /> */}
 
-            <div className="flex m-auto w-[90vw] flex-wrap">
+            <div className="flex m-auto w-[90vw] flex-wrap max-sm:block max-md:w-[80vw] ">
                 {datas.map((value, key) => {
                     return (
                         <AlcoholCard
