@@ -82,8 +82,8 @@ const timer = setInterval(async function () {
             last = res.data.last;
             const items = res.data.Items;
             allDatas.push(...items);
-            console.log(allDatas);
-            console.log("OK");
+            /* console.log(allDatas);
+            console.log("OK"); */
         })
         .catch((error) => {
             console.log("失敗");
