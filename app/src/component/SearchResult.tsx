@@ -55,12 +55,14 @@ let allDatas: Array<Object> = [];
 //"https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?format=json&genreId=408186&shopCode=kuranosuke&maxPrice=500&page=2&applicationId=1075902594404183588"
 
 const url =
-    "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?format=json&genreId=408186&shopCode=kuranosuke&maxPrice=500&";
+    "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?format=json&genreId=510915&shopCode=kuranosuke&maxPrice=500&";
 
 const affiliateId = process.env.REACT_APP_AFFILIAT_ID;
 const applicationId = process.env.REACT_APP_API_KEY;
 
 let counter = 1;
+let itemCount = 0;
+let last = 0;
 const timer = setInterval(async function () {
     await axios
         .get(
@@ -73,6 +75,11 @@ const timer = setInterval(async function () {
                 applicationId
         )
         .then((res) => {
+            if (counter == 1) {
+                itemCount = res.data.count;
+                console.log(itemCount);
+            }
+            last = res.data.last;
             const items = res.data.Items;
             allDatas.push(...items);
             console.log(allDatas);
@@ -82,7 +89,7 @@ const timer = setInterval(async function () {
             console.log("失敗");
             console.log(error.status);
         });
-    if (counter === 1) {
+    if (last === itemCount) {
         clearInterval(timer);
     }
     counter++;
@@ -190,7 +197,6 @@ const TestParent: React.FC = () => {
             }
             let drink: any = allDatas.filter((drink, index) => {
                 if (value.itemCode == drink.Item.itemCode) {
-                    console.log(index);
                 }
 
                 return value.itemCode == drink.Item.itemCode;
@@ -199,7 +205,6 @@ const TestParent: React.FC = () => {
             if (drink.length == 0) {
                 continue;
             }
-            console.log(value.company);
             //表示用にデータを整形
             const data: showData = {
                 Item: {
