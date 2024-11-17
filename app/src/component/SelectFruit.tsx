@@ -21,6 +21,7 @@ import imgMuscat from "../images/fruit/muscat.svg";
 import imgKiwi from "../images/fruit/kiwi.svg";
 import imgCassis from "../images/fruit/cassis.svg";
 import imgGrapefruit from "../images/fruit/grapefruit.svg";
+import imgShekwasha from "../images/fruit/shekwasha.svg";
 
 /** ラジオボタン設定 */
 interface Radio {
@@ -193,10 +194,18 @@ const SelectFruit: React.FC<ChildProps> = ({ changeFruit }) => {
             value: "グレープフルーツ",
         },
         {
+            name: "シークヮーサー",
+            iconType: "img",
+            iconColor: "crimson",
+            icon: imgShekwasha,
+            label: "shekwasha",
+            value: "シークヮーサー",
+        },
+        {
             name: "指定しない",
             iconType: "",
             iconColor: "",
-            icon: faFaceGrinWide,
+            icon: "",
             label: "指定しない",
             value: "",
         },
