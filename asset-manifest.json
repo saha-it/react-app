@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-app/static/css/main.64b5b3fc.css",
-    "main.js": "/react-app/static/js/main.ed952201.js",
+    "main.js": "/react-app/static/js/main.d6a14c13.js",
     "static/js/453.a6a97343.chunk.js": "/react-app/static/js/453.a6a97343.chunk.js",
     "static/media/rank_boad.png": "/react-app/static/media/rank_boad.77257161847c7a848980.png",
     "static/media/bar.png": "/react-app/static/media/bar.bae69d5b66e258f8bb7b.png",
@@ -35,11 +35,11 @@
     "static/media/apple.svg": "/react-app/static/media/apple.73d325778ea917d41fe5a66706503509.svg",
     "static/media/otya.svg": "/react-app/static/media/otya.9db45ebdb66e4235e23243f5a9e0870f.svg",
     "main.64b5b3fc.css.map": "/react-app/static/css/main.64b5b3fc.css.map",
-    "main.ed952201.js.map": "/react-app/static/js/main.ed952201.js.map",
+    "main.d6a14c13.js.map": "/react-app/static/js/main.d6a14c13.js.map",
     "453.a6a97343.chunk.js.map": "/react-app/static/js/453.a6a97343.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.64b5b3fc.css",
-    "static/js/main.ed952201.js"
+    "static/js/main.d6a14c13.js"
   ]
 }
