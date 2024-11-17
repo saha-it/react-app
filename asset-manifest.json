@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-app/static/css/main.64b5b3fc.css",
-    "main.js": "/react-app/static/js/main.31c31511.js",
+    "main.js": "/react-app/static/js/main.ed952201.js",
     "static/js/453.a6a97343.chunk.js": "/react-app/static/js/453.a6a97343.chunk.js",
     "static/media/rank_boad.png": "/react-app/static/media/rank_boad.77257161847c7a848980.png",
     "static/media/bar.png": "/react-app/static/media/bar.bae69d5b66e258f8bb7b.png",
@@ -13,6 +13,7 @@
     "static/media/aloe.svg": "/react-app/static/media/aloe.7f331181b43b953c45db314a3cc14409.svg",
     "static/media/ume.svg": "/react-app/static/media/ume.991e0d5024996576471df54789607f02.svg",
     "static/media/japanesepear.svg": "/react-app/static/media/japanesepear.6c2d1a8c94df3d9b8a6db716f5785884.svg",
+    "static/media/bin.svg": "/react-app/static/media/bin.7dbc284021859f087acc8fbb25a4e071.svg",
     "static/media/grapefruit.svg": "/react-app/static/media/grapefruit.e0490c7cb6f9e208c964c15ce43b8d89.svg",
     "static/media/orange.svg": "/react-app/static/media/orange.bd3cfae5fb482517f5f3894480051b86.svg",
     "static/media/strawberry.svg": "/react-app/static/media/strawberry.656f380a756a83f5c63872e61275ecbf.svg",
@@ -25,19 +26,20 @@
     "static/media/beer.svg": "/react-app/static/media/beer.5ff0333e30356ba4883bb22a899fd0e9.svg",
     "static/media/mandarin.svg": "/react-app/static/media/mandarin.8ab57f002593ecfabd7276a37a7977b3.svg",
     "static/media/lemon.svg": "/react-app/static/media/lemon.d127e3555e7f4c62abb0c8a543fd37f6.svg",
+    "static/media/shekwasha.svg": "/react-app/static/media/shekwasha.5a031f83dd449b23e9e98f0e080fa5af.svg",
     "static/media/wine.svg": "/react-app/static/media/wine.279754f9a230f8f3c4244c893accc349.svg",
     "static/media/cocktail.svg": "/react-app/static/media/cocktail.c7d6a75afba44a693e7ce2e4198c63b0.svg",
     "static/media/peach.svg": "/react-app/static/media/peach.8c7add1807b7b5e8c10b30fcb444d394.svg",
     "static/media/shochu.svg": "/react-app/static/media/shochu.cbac15adcabf812e4ea89a4d8c84de3e.svg",
-    "static/media/apple.svg": "/react-app/static/media/apple.73d325778ea917d41fe5a66706503509.svg",
     "index.html": "/react-app/index.html",
+    "static/media/apple.svg": "/react-app/static/media/apple.73d325778ea917d41fe5a66706503509.svg",
     "static/media/otya.svg": "/react-app/static/media/otya.9db45ebdb66e4235e23243f5a9e0870f.svg",
     "main.64b5b3fc.css.map": "/react-app/static/css/main.64b5b3fc.css.map",
-    "main.31c31511.js.map": "/react-app/static/js/main.31c31511.js.map",
+    "main.ed952201.js.map": "/react-app/static/js/main.ed952201.js.map",
     "453.a6a97343.chunk.js.map": "/react-app/static/js/453.a6a97343.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.64b5b3fc.css",
-    "static/js/main.31c31511.js"
+    "static/js/main.ed952201.js"
   ]
 }
