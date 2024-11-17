@@ -78,13 +78,13 @@ const timer = setInterval(async function () {
             if (counter == 1) {
                 itemCount = res.data.count;
                 //TODO console
-                /* console.log(itemCount); */
+                //console.log(itemCount);
             }
             last = res.data.last;
             const items = res.data.Items;
             allDatas.push(...items);
-            /* console.log(allDatas);
-            console.log("OK"); */
+            //console.log(allDatas);
+            //console.log("OK");
         })
         .catch((error) => {
             console.log("失敗");
@@ -94,7 +94,7 @@ const timer = setInterval(async function () {
         clearInterval(timer);
     }
     counter++;
-    /* console.log(counter); */
+    //console.log(counter);
 }, 500);
 
 const TestParent: React.FC = () => {
