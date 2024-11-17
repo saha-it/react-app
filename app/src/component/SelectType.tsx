@@ -10,6 +10,7 @@ import {
 
 import imgBeer from "../images/type/beer.svg";
 import imgCan from "../images/type/can.svg";
+import imgBin from "../images/type/bin.svg";
 import imgSour from "../images/type/sour.svg";
 import imgWine from "../images/type/wine.svg";
 import imgCocktail from "../images/type/cocktail.svg";
@@ -96,6 +97,13 @@ const SelectType: React.FC<ChildProps> = ({ changeType }) => {
             icon: imgCan,
             label: "196",
             value: "196",
+        },
+        {
+            name: "クライナー",
+            iconType: "img",
+            icon: imgBin,
+            label: "kleiner",
+            value: "クライナー",
         },
         {
             name: "ワイン",
