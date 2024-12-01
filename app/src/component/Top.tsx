@@ -8,6 +8,17 @@ const amazonRankUrl = process.env.REACT_APP_AMAZON_RANK_URL;
 function Top() {
     return (
         <div id="top" className="bg-[#000]">
+            <div className="text-[#fff] w-fit m-auto text-center my-4 font-serif">
+                <h1 className="font-bold my-4">
+                    あなたの好きな缶チューハイがきっと見つかる
+                </h1>
+                <p>いらっしゃいませ</p>
+                <p>
+                    当店ではお客様の好みをお伺いし、<br></br>
+                    その条件にあった缶チューハイをおすすめします。<br></br>
+                </p>
+            </div>
+
             <div>
                 <div className="relative">
                     <img
