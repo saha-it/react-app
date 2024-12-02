@@ -8,6 +8,7 @@ const AlcoholCard = (prop: any) => {
                 <img
                     className="absolute m-auto w-fit z-10 top-0 left-0 right-0 bottom-0"
                     src={prop.imageUrl}
+                    alt={prop.itemName}
                 ></img>
             </div>
             <div className="text-[#803D3B] font-serif font-semibold text-center mb-4">
