@@ -155,7 +155,7 @@ const SelectType: React.FC<ChildProps> = ({ changeType }) => {
                 method={changeValue}
                 state={type}
                 radioType={"type"}
-                title={"お酒の種類・シリーズ"}
+                title={"種類・シリーズ"}
             />
             {/* <div className="container form-check m-auto bg-[#fff]">
                 <div className="row">

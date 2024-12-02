@@ -256,7 +256,7 @@ const TestParent: React.FC = () => {
             </div>
 
             <div className="text-[#fff] font-serif font-semibold w-fit m-auto">
-                <p>お酒の種類:{condition.type}</p>
+                <p>種類・シリーズ:{condition.type}</p>
                 <p>アルコールレベル:{condition.alcoholContent}</p>
                 <p>メーカー:{condition.company}</p>
                 <p>味わい:{condition.flavor}</p>
