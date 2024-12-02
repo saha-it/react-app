@@ -77,24 +77,19 @@ const timer = setInterval(async function () {
         .then((res) => {
             if (counter == 1) {
                 itemCount = res.data.count;
-                //TODO console
-                //console.log(itemCount);
             }
             last = res.data.last;
             const items = res.data.Items;
             allDatas.push(...items);
-            //console.log(allDatas);
-            //console.log("OK");
         })
         .catch((error) => {
             console.log("失敗");
             console.log(error.status);
         });
-    if (last === itemCount /* counter == 3 */) {
+    if (last === itemCount) {
         clearInterval(timer);
     }
     counter++;
-    //console.log(counter);
 }, 500);
 
 const TestParent: React.FC = () => {
