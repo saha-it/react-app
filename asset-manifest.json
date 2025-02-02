@@ -1,12 +1,10 @@
 {
   "files": {
-    "main.css": "/react-app/static/css/main.88074078.css",
-    "main.js": "/react-app/static/js/main.4473fbe4.js",
+    "main.css": "/react-app/static/css/main.fb8e5284.css",
+    "main.js": "/react-app/static/js/main.1b7209ea.js",
     "static/js/453.a6a97343.chunk.js": "/react-app/static/js/453.a6a97343.chunk.js",
-    "static/media/rank_boad.png": "/react-app/static/media/rank_boad.77257161847c7a848980.png",
-    "static/media/bar.png": "/react-app/static/media/bar.bae69d5b66e258f8bb7b.png",
+    "static/media/bar2.png": "/react-app/static/media/bar2.ad43cd4fead0348d2557.png",
     "static/media/cassis.svg": "/react-app/static/media/cassis.89cd161e31bfd832e6fc76c1543e17e7.svg",
-    "static/media/cat4.png": "/react-app/static/media/cat4.712043bfd8a65ba58179.png",
     "static/media/pineapple.svg": "/react-app/static/media/pineapple.d5d89ce8f2f9792494ed1ae5edf66fef.svg",
     "static/media/kiwi.svg": "/react-app/static/media/kiwi.4ffad9ff2d9b37d048b0fc287d199a22.svg",
     "static/media/yuzu.svg": "/react-app/static/media/yuzu.969d71b125dc4d5722b21b75602c6f6c.svg",
@@ -34,12 +32,12 @@
     "index.html": "/react-app/index.html",
     "static/media/apple.svg": "/react-app/static/media/apple.73d325778ea917d41fe5a66706503509.svg",
     "static/media/otya.svg": "/react-app/static/media/otya.9db45ebdb66e4235e23243f5a9e0870f.svg",
-    "main.88074078.css.map": "/react-app/static/css/main.88074078.css.map",
-    "main.4473fbe4.js.map": "/react-app/static/js/main.4473fbe4.js.map",
+    "main.fb8e5284.css.map": "/react-app/static/css/main.fb8e5284.css.map",
+    "main.1b7209ea.js.map": "/react-app/static/js/main.1b7209ea.js.map",
     "453.a6a97343.chunk.js.map": "/react-app/static/js/453.a6a97343.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.88074078.css",
-    "static/js/main.4473fbe4.js"
+    "static/css/main.fb8e5284.css",
+    "static/js/main.1b7209ea.js"
   ]
 }
