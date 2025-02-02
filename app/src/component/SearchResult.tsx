@@ -77,24 +77,19 @@ const timer = setInterval(async function () {
         .then((res) => {
             if (counter == 1) {
                 itemCount = res.data.count;
-                //TODO console
-                //console.log(itemCount);
             }
             last = res.data.last;
             const items = res.data.Items;
             allDatas.push(...items);
-            //console.log(allDatas);
-            //console.log("OK");
         })
         .catch((error) => {
             console.log("失敗");
             console.log(error.status);
         });
-    if (last === itemCount /* counter == 3 */) {
+    if (last === itemCount) {
         clearInterval(timer);
     }
     counter++;
-    //console.log(counter);
 }, 500);
 
 const TestParent: React.FC = () => {
@@ -261,7 +256,7 @@ const TestParent: React.FC = () => {
             </div>
 
             <div className="text-[#fff] font-serif font-semibold w-fit m-auto">
-                <p>お酒の種類:{condition.type}</p>
+                <p>種類・シリーズ:{condition.type}</p>
                 <p>アルコールレベル:{condition.alcoholContent}</p>
                 <p>メーカー:{condition.company}</p>
                 <p>味わい:{condition.flavor}</p>

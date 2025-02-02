@@ -9,3 +9,44 @@ html {
 body {
     background-color: #000;
 }
+
+.speechBubble {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+    padding: 16px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    background-color: #d6fdff;
+    text-align: left;
+    /* font-size: 16px; */
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+}
+
+.speechBubble::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    border-style: solid;
+    border-width: 0 0 20px 20px;
+    border-color: transparent transparent transparent #000000;
+    translate: 100% -50%;
+    transform: skew(0, 44deg);
+    transform-origin: left;
+}
+
+.speechBubble::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    border-style: solid;
+    border-width: 0 0 15.2px 15.2px;
+    border-color: transparent transparent transparent #d6fdff;
+    translate: 100% calc(-50% - 0.4px);
+    transform: skew(0, 44deg);
+    transform-origin: left;
+}

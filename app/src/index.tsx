@@ -4,7 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
-import Header from "./component/Header";
+/* import Header from "./component/Header"; */
+import Header from "./component/common/Header";
 import Top from "./component/Top";
 import TopButton from "./component/TopButton";
 import SearchResult from "./component/SearchResult";
@@ -17,6 +18,7 @@ const APP_NAME: String = "react-app";
 
 root.render(
     <div>
+        <Header />
         <TopButton />
         {/* <Search /> */}
         {/* <Header /> */}

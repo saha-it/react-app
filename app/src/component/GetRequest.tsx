@@ -23,7 +23,7 @@ interface essentialData {
 let allDatas: Array<Object> = [];
 
 const url =
-    "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?format=json&genreId=510915&shopCode=kuranosuke&maxPrice=500&sort=%2BupdateTimestamp";
+    "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?format=json&genreId=510915&shopCode=kuranosuke&maxPrice=500&sort=-updateTimestamp";
 
 const affiliateId = process.env.REACT_APP_AFFILIAT_ID;
 const applicationId = process.env.REACT_APP_API_KEY;
